@@ -1,0 +1,17 @@
+.searchInputWrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    border: 1px var(--search-bg-color) solid;
+}
+
+.searchInput {
+    width: 50%;
+    outline: none;
+    min-width: 200px;
+    min-height: 20px;
+    border-radius: 5px;
+    padding: 4px;
+    border-width: 0px;
+}
