@@ -33,7 +33,7 @@ function App() {
         <SortPhotos onSort={sortData}/>
       </div>
      <div className='images-container'>
-      {data.map(d => renderImages(d.urls.regular,d.id,d.alt_description))}
+      {data.map(d => renderImages(d.urls.thumb,d.id,d.alt_description))}
      </div>
      <FullScreenView url={selectedImage}/>
     </div>
