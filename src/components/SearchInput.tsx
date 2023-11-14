@@ -1,5 +1,6 @@
 import searchIcon from '../assets/search.png';
 import styles from '../styles/search-input.module.css';
+
 type Props = {
     setInputText: (v: string)=> void;
     inputText: string;

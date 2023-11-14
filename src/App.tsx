@@ -8,12 +8,12 @@ import RemoteData from './components/RemoteData';
 import SortPhotos from './components/SortPhotos';
 
 function App() {
-  const [value, setValue] = useState('');
-  const {data, photoApiSearch, sortData} = usePhotoApi();
+  const [inputValue, setInputValue] = useState('');
+  const {data, photoApiSearch, sortPhotos} = usePhotoApi();
   const [selectedImage, setSelectedImage] = useState('');
 
   const onSearchValueChange = (v: string) => {
-    setValue(v);
+    setInputValue(v);
     photoApiSearch(v);
   }
 
@@ -26,14 +26,22 @@ function App() {
   const renderImages = (url: string, id: string, alt: string) => 
   <RemoteData key={id} data={data} render={getImages(url,alt)} />
 
+
+  const showImages = () => {
+     if(data.length === 0) {
+      return <p>No result</p>
+     }
+     return data.map(d => renderImages(d.urls.thumb,d.id,d.alt_description));
+  }
+
   return (
     <div className="wrapper">
       <div className='input-wrapper'>
-        <SearchInput inputText={value} setInputText={onSearchValueChange}/>
-        <SortPhotos onSort={sortData}/>
+        <SearchInput inputText={inputValue} setInputText={onSearchValueChange}/>
+        <SortPhotos onSort={sortPhotos}/>
       </div>
      <div className='images-container'>
-      {data.map(d => renderImages(d.urls.thumb,d.id,d.alt_description))}
+      {showImages()}
      </div>
      <FullScreenView url={selectedImage}/>
     </div>

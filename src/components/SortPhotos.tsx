@@ -19,8 +19,8 @@ type Props = {
 export default function SortPhotos ({onSort}: Props) {
    return (
     <select onChange={(e) => onSort(getSortValue(e.target.value))} 
-            className={styles.sortSelect} title='Sort Images'>
-          <option selected value={'other'}>Sort</option>
+            className={styles.sortSelect} title='selected'>
+          <option disabled value={'other'}>Sort</option>
           <option value={'color'}>color</option>
           <option value={'likes'}>likes</option>
     </select>

@@ -27,7 +27,7 @@ export const  usePhotoApi = () => {
       });
     }
 
-    const sortData  = (sortType: Sort) => {
+    const sortPhotos  = (sortType: Sort) => {
         let sortedData = [];
        switch (sortType) {
          case Sort.color:
@@ -58,7 +58,8 @@ export const  usePhotoApi = () => {
 
  useEffect(() => {
    setData(sortResult);
+   setIsSorted(false);
  }, [isSorted,sortResult]);
 
- return { data, photoApiSearch, sortData };
+ return { data, photoApiSearch, sortPhotos };
 }

@@ -2,7 +2,7 @@
   --search-bg-color: rgb(245, 234, 234);
 }
 
-.wrapper{
+.wrapper {
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -11,7 +11,7 @@
   height: 100vh;
 }
 
-.images-container{
+.images-container {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -19,7 +19,7 @@
     flex-wrap: wrap;
 }
 
-.input-wrapper{
+.input-wrapper {
     display: flex;
     align-items: center;
     justify-content: center;

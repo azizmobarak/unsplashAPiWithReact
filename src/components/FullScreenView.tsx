@@ -13,7 +13,8 @@ export default function FullScreenView ({url}: Props){
     },[url]);
 
     if(!img) return null;
-    return <div className={styles.fullScreen}>
+
+    return  <div className={styles.fullScreen}>
           <button onClick={() => setImg('')} className={styles.closeButton}>X</button>
           <img width={'100%'} height={'100%'} alt='' src={url} />
           </div>

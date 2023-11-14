@@ -8,7 +8,6 @@ type Props = {
 }
 
 export default function RemoteData({data, render}: Props){
-    console.log('data long ', data)
   if(data.length === 0) return <p className={styles.imagePlaceHolder}>loading .. </p>
   return render;
 }
